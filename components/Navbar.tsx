@@ -26,7 +26,8 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow rounded-full overflow-hidden">
-            <Image src="/logo.png" alt="Bookxflow Publishing Logo" fill sizes="40px" className="object-cover" />
+            {/* Update the src below if your file is named differently, e.g., "/logo.svg" */}
+            <Image src="/logo.png" alt="Bookxflow Publishing Logo" fill sizes="40px" className="object-contain p-0.5" />
           </div>
           <span className="text-xl font-bold tracking-tight text-white">
             Bookxflow Publishing
