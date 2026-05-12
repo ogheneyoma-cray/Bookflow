@@ -10,138 +10,138 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: "EDX-DEV-01",
-    sku: "EDX-DEV-01",
-    name: "Full-Stack Web Dev Bootcamp",
-    shortDesc: "Master HTML, CSS, React, and Node.js.",
-    fullDesc: "A comprehensive 60-hour video course taking you from absolute beginner to job-ready full-stack developer. Includes real-world projects, source code, and a certificate of completion.",
-    price: 149.00,
-    category: "Programming"
+    id: "BFP-FIC-001",
+    sku: "BFP-FIC-001",
+    name: "The Crimson Cipher",
+    shortDesc: "A fast-paced international thriller involving a stolen artifact and a deadly secret society.",
+    fullDesc: "Dive into an explosive mystery. When a cryptographer uncovers a hidden message in a centuries-old manuscript, she becomes the target of an underground syndicate. Formatted perfectly for Kindle, Apple Books, and PDF reading.",
+    price: 8.99,
+    category: "Fiction & Thriller"
   },
   {
-    id: "EDX-DSG-01",
-    sku: "EDX-DSG-01",
-    name: "UI/UX Design Masterclass",
-    shortDesc: "Learn Figma, wireframing, and user research.",
-    fullDesc: "Discover the principles of user interface and user experience design. Over 40 hours of content covering design thinking, prototyping in Figma, and building a professional portfolio.",
-    price: 129.00,
-    category: "Design"
+    id: "BFP-BUS-001",
+    sku: "BFP-BUS-001",
+    name: "Startup Scaling Secrets",
+    shortDesc: "The ultimate guide to taking your business from zero to $1 million in revenue.",
+    fullDesc: "Stop guessing and start growing. This comprehensive ebook breaks down the exact marketing funnels, hiring strategies, and financial models used by today's fastest-growing startups. Includes actionable templates.",
+    price: 14.99,
+    category: "Business & Entrepreneurship"
   },
   {
-    id: "EDX-MKT-01",
-    sku: "EDX-MKT-01",
-    name: "Digital Marketing Fundamentals",
-    shortDesc: "SEO, SEM, and Social Media strategies.",
-    fullDesc: "Learn how to drive traffic and convert leads. This course covers SEO optimization, Google Ads, Facebook marketing, and email campaign strategies for modern businesses.",
-    price: 99.00,
-    category: "Marketing"
+    id: "BFP-SLF-001",
+    sku: "BFP-SLF-001",
+    name: "Mindful Mornings",
+    shortDesc: "Transform your day with a science-backed morning routine.",
+    fullDesc: "Win your morning, win your day. Learn how to eliminate snooze-button guilt, establish a 15-minute meditation practice, and boost your daily productivity without burning out.",
+    price: 11.50,
+    category: "Self-Help"
   },
   {
-    id: "EDX-DAT-01",
-    sku: "EDX-DAT-01",
-    name: "Python for Data Science",
-    shortDesc: "Analyze data with Pandas, NumPy, and Matplotlib.",
-    fullDesc: "Dive deep into data manipulation and visualization using Python. Perfect for beginners looking to enter the high-demand field of data science and analytics.",
-    price: 139.00,
-    category: "Data Science"
+    id: "BFP-SCI-001",
+    sku: "BFP-SCI-001",
+    name: "Echoes of the Void",
+    shortDesc: "An award-winning sci-fi epic spanning three solar systems.",
+    fullDesc: "Earth is gone. Follow the last human fleet as they navigate hostile alien territories and internal political betrayals in search of a new home. A sweeping space opera.",
+    price: 9.99,
+    category: "Sci-Fi & Fantasy"
   },
   {
-    id: "EDX-BUS-01",
-    sku: "EDX-BUS-01",
-    name: "Agile Project Management",
-    shortDesc: "Master Scrum and Agile methodologies.",
-    fullDesc: "Learn how to lead teams and deliver projects faster. This course prepares you for foundational Agile certifications and includes practical Jira software tutorials.",
-    price: 89.00,
-    category: "Business"
+    id: "BFP-BUS-002",
+    sku: "BFP-BUS-002",
+    name: "The Art of Digital Negotiation",
+    shortDesc: "Master the psychology of deal-making over email, Zoom, and Slack.",
+    fullDesc: "Remote work has changed how we negotiate. Learn how to read digital cues, draft persuasive emails, and close high-stakes deals without ever meeting face-to-face.",
+    price: 16.00,
+    category: "Business & Career"
   },
   {
-    id: "EDX-DEV-02",
-    sku: "EDX-DEV-02",
-    name: "Advanced React.js Patterns",
-    shortDesc: "Build scalable frontend applications.",
-    fullDesc: "For developers who know the basics. Learn advanced hooks, state management with Redux, and performance optimization techniques to build enterprise-grade React apps.",
-    price: 119.00,
-    category: "Programming"
+    id: "BFP-SLF-002",
+    sku: "BFP-SLF-002",
+    name: "Minimalist Living Masterclass",
+    shortDesc: "Declutter your physical space to free your mental space.",
+    fullDesc: "A practical, room-by-room guide to living with less. Discover proven methods to organize your home, simplify your wardrobe, and reduce daily anxiety through minimalism.",
+    price: 12.99,
+    category: "Self-Help"
   },
   {
-    id: "EDX-MKT-02",
-    sku: "EDX-MKT-02",
-    name: "Freelance Copywriting Guide",
-    shortDesc: "Turn words into a profitable online business.",
-    fullDesc: "Step-by-step guide to writing high-converting sales pages, emails, and ads. Includes templates, client acquisition strategies, and pricing frameworks.",
-    price: 79.00,
-    category: "Marketing"
+    id: "BFP-FIC-002",
+    sku: "BFP-FIC-002",
+    name: "Whispers in the Highlands",
+    shortDesc: "A sweeping historical romance set against the backdrop of the Scottish rebellions.",
+    fullDesc: "Love, loyalty, and betrayal. When an English aristocrat is rescued by a Scottish rebel, a dangerous romance ignites that could alter the course of a nation's history.",
+    price: 7.99,
+    category: "Fiction & Romance"
   },
   {
-    id: "EDX-DAT-02",
-    sku: "EDX-DAT-02",
-    name: "Machine Learning A-Z",
-    shortDesc: "Build predictive models with Python.",
-    fullDesc: "Learn to create machine learning algorithms from scratch. Covers regression, classification, clustering, and deep learning basics using Scikit-Learn and TensorFlow.",
-    price: 159.00,
-    category: "Data Science"
+    id: "BFP-EDU-001",
+    sku: "BFP-EDU-001",
+    name: "Python for Absolute Beginners",
+    shortDesc: "Learn to code in Python with this step-by-step, interactive guide.",
+    fullDesc: "Launch your tech career today. This ebook takes you from writing your first line of code to building fully functional web scrapers and automation scripts in just 30 days.",
+    price: 18.99,
+    category: "Education & Tech"
   },
   {
-    id: "EDX-DSG-02",
-    sku: "EDX-DSG-02",
-    name: "Graphic Design Bootcamp",
-    shortDesc: "Photoshop, Illustrator, and InDesign mastery.",
-    fullDesc: "The ultimate guide to Adobe Creative Cloud. Create stunning logos, typography, and layout designs with hands-on projects and professional feedback techniques.",
-    price: 119.00,
-    category: "Design"
+    id: "BFP-NON-001",
+    sku: "BFP-NON-001",
+    name: "The Plant-Based Athlete",
+    shortDesc: "75 high-protein vegan recipes for peak performance.",
+    fullDesc: "Fuel your workouts with plants. Written by a certified sports nutritionist, this digital cookbook provides meal plans, prep strategies, and delicious recipes designed for active lifestyles.",
+    price: 14.50,
+    category: "Non-Fiction & Lifestyle"
   },
   {
-    id: "EDX-BUS-02",
-    sku: "EDX-BUS-02",
-    name: "Financial Modeling for Startups",
-    shortDesc: "Build robust financial projections.",
-    fullDesc: "Learn how to model revenue, forecast expenses, and prepare financial statements to pitch investors. Ideal for entrepreneurs and startup founders.",
-    price: 149.00,
-    category: "Business"
+    id: "BFP-SCI-002",
+    sku: "BFP-SCI-002",
+    name: "Shadows of the Crown",
+    shortDesc: "A dark fantasy novel filled with magic, assassins, and royal intrigue.",
+    fullDesc: "Magic has a price. Follow a young assassin forced to protect the very prince she was hired to kill in a kingdom teetering on the edge of a magical war.",
+    price: 8.50,
+    category: "Sci-Fi & Fantasy"
   },
   {
-    id: "EDX-DEV-03",
-    sku: "EDX-DEV-03",
-    name: "iOS App Development",
-    shortDesc: "Build Apple apps using Swift and Xcode.",
-    fullDesc: "Create your first iOS application. This course covers Swift programming, user interface design in Xcode, and how to publish your app on the Apple App Store.",
-    price: 139.00,
-    category: "Programming"
+    id: "BFP-BUS-003",
+    sku: "BFP-BUS-003",
+    name: "Financial Independence 101",
+    shortDesc: "A beginner's roadmap to investing, saving, and retiring early.",
+    fullDesc: "Take control of your financial future. This plain-English guide demystifies index funds, 401(k)s, and real estate investing to help you build a sustainable wealth portfolio.",
+    price: 15.00,
+    category: "Business & Finance"
   },
   {
-    id: "EDX-MKT-03",
-    sku: "EDX-MKT-03",
-    name: "Social Media Branding",
-    shortDesc: "Grow your audience on Instagram & TikTok.",
-    fullDesc: "Master the algorithms. Learn content creation strategies, personal branding, and how to monetize your following across major social platforms.",
-    price: 69.00,
-    category: "Marketing"
+    id: "BFP-NON-002",
+    sku: "BFP-NON-002",
+    name: "The Resilient Child",
+    shortDesc: "Modern parenting strategies for raising emotionally intelligent kids.",
+    fullDesc: "Navigate the complexities of parenting in the digital age. Learn how to foster open communication, set healthy screen-time boundaries, and build lasting resilience in your children.",
+    price: 13.99,
+    category: "Non-Fiction & Lifestyle"
   },
   {
-    id: "EDX-DAT-03",
-    sku: "EDX-DAT-03",
-    name: "SQL for Business Intelligence",
-    shortDesc: "Query databases and extract insights.",
-    fullDesc: "Master SQL syntax, complex joins, and database design. Learn how to connect SQL databases to Tableau for powerful business intelligence dashboards.",
-    price: 99.00,
-    category: "Data Science"
+    id: "BFP-BUS-004",
+    sku: "BFP-BUS-004",
+    name: "Mastering SEO in 2026",
+    shortDesc: "Rank higher, drive traffic, and dominate Google search results.",
+    fullDesc: "Stay ahead of the algorithm. This advanced marketing guide covers technical SEO, link-building outreach, and AI-driven content strategies for modern websites.",
+    price: 19.99,
+    category: "Business & Marketing"
   },
   {
-    id: "EDX-BUS-03",
-    sku: "EDX-BUS-03",
-    name: "Leadership Communication",
-    shortDesc: "Speak confidently and lead effectively.",
-    fullDesc: "Enhance your public speaking, active listening, and conflict resolution skills. Essential training for new managers and aspiring corporate leaders.",
-    price: 79.00,
-    category: "Business"
+    id: "BFP-FIC-003",
+    sku: "BFP-FIC-003",
+    name: "Poetry of the Concrete",
+    shortDesc: "A breathtaking collection of modern urban poetry.",
+    fullDesc: "Raw, emotional, and unapologetic. This collection explores the themes of isolation, love, and ambition in the modern city landscape.",
+    price: 6.99,
+    category: "Literature & Poetry"
   },
   {
-    id: "EDX-DSG-03",
-    sku: "EDX-DSG-03",
-    name: "Video Editing with Premiere Pro",
-    shortDesc: "Edit like a professional creator.",
-    fullDesc: "Learn cutting, color grading, audio mixing, and motion graphics integration in Adobe Premiere Pro. Start editing YouTube videos, films, and commercials.",
-    price: 109.00,
-    category: "Design"
+    id: "BFP-BUS-005",
+    sku: "BFP-BUS-005",
+    name: "Freelance Freedom",
+    shortDesc: "How to quit your 9-to-5 and build a six-figure freelance business.",
+    fullDesc: "Turn your skills into a profitable independent career. Learn how to pitch high-paying clients, set profitable rates, and manage your time as a successful freelancer.",
+    price: 14.99,
+    category: "Business & Career"
   },
 ];

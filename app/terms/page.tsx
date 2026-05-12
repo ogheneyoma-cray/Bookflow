@@ -1,28 +1,31 @@
-export default function TermsPage() {
+export default function TermsAndConditionsPage() {
   return (
-    <div className="min-h-screen bg-slate-50 py-20 px-6">
+    <main className="min-h-screen bg-[#EDF2F4] py-20 px-6 font-['Merriweather',_serif]">
       <div className="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-100">
-        <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">Terms and Conditions</h1>
+        <h1 className="text-3xl md:text-5xl font-bold text-[#2B2D42] mb-8 font-['Montserrat',_sans-serif]">Terms and Conditions</h1>
         
-        <div className="space-y-8 text-lg text-slate-600 leading-relaxed">
+        <div className="space-y-8 text-slate-600 leading-relaxed">
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Acceptance of Terms</h2>
-            <p>By creating an account and enrolling in Edxflow Academy courses, you agree to comply with and be bound by these Terms and Conditions.</p>
+            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',_sans-serif]">1. Overview</h2>
+            <p>By accessing the Bookflow Publishing website and purchasing our digital products, you agree to be bound by these Terms and Conditions. If you do not agree to all the terms, you may not access the website or use any services.</p>
           </section>
+
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Account Security & Sharing</h2>
-            <p>You are responsible for maintaining the confidentiality of your account credentials. Course purchases are for individual use only. Sharing account logins, downloading course videos for unauthorized distribution, or pirating materials will result in immediate account termination without a refund.</p>
+            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',_sans-serif]">2. License and Use of Ebooks</h2>
+            <p>When you purchase an ebook from Bookflow Publishing, you are granted a non-exclusive, non-transferable license to download and access the content for your personal, non-commercial use only.</p>
           </section>
+
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Intellectual Property</h2>
-            <p>All course content, including videos, PDFs, code snippets, and graphics, are the intellectual property of Edxflow Academy and its instructors. You are granted a limited, non-exclusive, non-transferable license to access and view the content for your personal, non-commercial educational purposes.</p>
+            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',_sans-serif]">3. Copyright and Intellectual Property</h2>
+            <p>All digital content sold on this site is protected by international copyright laws. You may not copy, reproduce, distribute, share, pirate, or resell our ebooks in any form. Unauthorized distribution or file-sharing of our copyrighted material will result in immediate termination of your account and potential legal action.</p>
           </section>
+
           <section>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Course Modifications</h2>
-            <p>Technology moves fast. Edxflow Academy reserves the right to update, modify, or remove course content at any time to ensure the curriculum remains accurate and up-to-date.</p>
+            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',_sans-serif]">4. Account Responsibilities</h2>
+            <p>If you create an account on our site, you are responsible for maintaining the confidentiality of your account login information and for all activities that occur under your account.</p>
           </section>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
