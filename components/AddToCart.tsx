@@ -3,10 +3,12 @@
 import { useState } from "react";
 import { ShoppingCart, Check } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import { Product } from "@/lib/products";
 
 export default function AddToCart({ product }: { product: Product }) {
   const { addToCart } = useCart();
+  const { formatPrice } = useCurrency();
   const [added, setAdded] = useState(false);
 
   const handleAdd = () => {
@@ -24,7 +26,7 @@ export default function AddToCart({ product }: { product: Product }) {
       }`}
     >
       {added ? <Check size={20} /> : <ShoppingCart size={20} />}
-      {added ? "Added to Cart!" : `Add to Cart - $${product.price.toFixed(2)}`}
+      {added ? "Added to Cart!" : `Add to Cart — ${formatPrice(product.price)}`}
     </button>
   );
 }

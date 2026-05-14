@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
 import { products } from "@/lib/products";
 import AddToCart from "@/components/AddToCart";
+import PriceDisplay from "@/components/PriceDisplay";
 
 // Pre-generate all the static routes for your ebooks at build time
 export async function generateStaticParams() {
@@ -73,7 +74,7 @@ export default async function ProductDetailsPage({
 
             <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="text-4xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif]">
-                ${product.price.toFixed(2)}
+                <PriceDisplay usdPrice={product.price} />
               </div>
               
               {/* Interactive Add to Cart Component */}

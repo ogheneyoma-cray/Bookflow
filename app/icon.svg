@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="18" fill="#2B2D42"/>
+  <path d="M50 14 L73 25 L73 53 C73 70 63 81 50 87 C37 81 27 70 27 53 L27 25 Z" fill="#D90429"/>
+  <text x="50" y="73"
+        text-anchor="middle"
+        font-size="50"
+        font-weight="900"
+        fill="white"
+        font-family="Arial Black, Arial, Helvetica, sans-serif">S</text>
+</svg>

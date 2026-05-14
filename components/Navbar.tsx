@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -18,6 +18,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { totalItems } = useCart();
+  const { currency, setCurrency } = useCurrency();
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#2B2D42]/95 backdrop-blur-md border-b border-white/10 font-['Montserrat',sans-serif]">
@@ -25,17 +26,16 @@ export default function Navbar() {
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow rounded-full overflow-hidden">
-            {/* Update the src below if your file is named differently, e.g., "/logo.svg" */}
-            <Image src="/logo.png" alt="Bookxflow Publishing Logo" fill sizes="40px" className="object-contain p-0.5" />
+          <div className="relative w-10 h-10 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow rounded-[18px] overflow-hidden">
+            <img src="/logo.svg" alt="Sellisafe Logo" className="w-10 h-10 object-contain" />
           </div>
           <span className="text-xl font-bold tracking-tight text-white">
-            Bookxflow Publishing
+            Sellisafe
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -45,6 +45,30 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+
+          {/* Currency Switcher */}
+          <div className="flex items-center gap-1 bg-white/10 rounded-full p-1">
+            <button
+              onClick={() => setCurrency("USD")}
+              className={`px-3 py-1 rounded-full text-xs font-bold transition ${
+                currency === "USD"
+                  ? "bg-[#D90429] text-white"
+                  : "text-slate-300 hover:text-white"
+              }`}
+            >
+              USD
+            </button>
+            <button
+              onClick={() => setCurrency("NGN")}
+              className={`px-3 py-1 rounded-full text-xs font-bold transition ${
+                currency === "NGN"
+                  ? "bg-[#D90429] text-white"
+                  : "text-slate-300 hover:text-white"
+              }`}
+            >
+              NGN
+            </button>
+          </div>
 
           {/* Cart Icon */}
           <Link href="/cart" className="relative text-slate-300 hover:text-[#D90429] transition-colors">
@@ -66,6 +90,26 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
+          {/* Currency Switcher (mobile) */}
+          <div className="flex items-center gap-1 bg-white/10 rounded-full p-0.5">
+            <button
+              onClick={() => setCurrency("USD")}
+              className={`px-2 py-0.5 rounded-full text-xs font-bold transition ${
+                currency === "USD" ? "bg-[#D90429] text-white" : "text-slate-300"
+              }`}
+            >
+              $
+            </button>
+            <button
+              onClick={() => setCurrency("NGN")}
+              className={`px-2 py-0.5 rounded-full text-xs font-bold transition ${
+                currency === "NGN" ? "bg-[#D90429] text-white" : "text-slate-300"
+              }`}
+            >
+              ₦
+            </button>
+          </div>
+
           <Link href="/cart" className="relative text-slate-300 hover:text-[#D90429]">
             <ShoppingCart size={22} />
             {totalItems > 0 && (

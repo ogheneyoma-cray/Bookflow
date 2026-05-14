@@ -1,33 +1,54 @@
-import { Mail, Clock, Send } from "lucide-react";
+import { Mail, Clock, Send, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#EDF2F4] py-24 px-6 font-['Merriweather',serif]">
       <div className="max-w-5xl mx-auto">
-        
+
         <div className="text-center mb-16 space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#2B2D42] font-['Montserrat',sans-serif]">We’d Love to Hear From You</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#2B2D42] font-['Montserrat',sans-serif]">We&apos;d Love to Hear From You</h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Whether you need technical support downloading your latest purchase, have a question about a specific title, or are an author interested in joining the Bookxflow family, our team is here to help.
+            Whether you need technical support downloading your latest purchase, have a question about a specific title, or are an author interested in joining the Sellisafe family, our team is here to help.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Contact Information */}
-          <div className="md:col-span-1 space-y-8">
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+          <div className="md:col-span-1 space-y-6">
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
               <Mail className="w-10 h-10 text-[#D90429] mb-4" />
               <h3 className="text-lg font-bold text-[#2B2D42] mb-2 font-['Montserrat',sans-serif]">Email Us</h3>
-              <a href="mailto:support@bookxflowpublishing.com" className="text-[#D90429] hover:underline font-medium">support@bookxflowpublishing.com</a>
+              <a href="mailto:csteam@sellisafe.com" className="text-[#D90429] hover:underline font-medium break-all">
+                csteam@sellisafe.com
+              </a>
             </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+              <Phone className="w-10 h-10 text-[#D90429] mb-4" />
+              <h3 className="text-lg font-bold text-[#2B2D42] mb-2 font-['Montserrat',sans-serif]">Call Us</h3>
+              <a href="tel:+2349032537565" className="text-[#D90429] hover:underline font-medium">
+                +234 903 253 7565
+              </a>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+              <MapPin className="w-10 h-10 text-[#D90429] mb-4" />
+              <h3 className="text-lg font-bold text-[#2B2D42] mb-2 font-['Montserrat',sans-serif]">Our Address</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                179 Victoria Street,<br />
+                Port Harcourt City LGA,<br />
+                Rivers State, Nigeria
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
               <Clock className="w-10 h-10 text-[#D90429] mb-4" />
               <h3 className="text-lg font-bold text-[#2B2D42] mb-2 font-['Montserrat',sans-serif]">Support Hours</h3>
-              <p className="text-slate-600">Monday – Friday<br />9:00 AM to 5:00 PM (EST)</p>
+              <p className="text-slate-600 text-sm">Monday – Friday<br />9:00 AM to 5:00 PM (WAT)</p>
             </div>
           </div>
 
-          {/* Contact Form Layout */}
+          {/* Contact Form */}
           <div className="md:col-span-2 bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
             <h2 className="text-2xl font-bold text-[#2B2D42] mb-6 font-['Montserrat',sans-serif]">Send Us a Message</h2>
             <form className="space-y-6">
@@ -43,17 +64,22 @@ export default function ContactPage() {
               </div>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="order" className="text-sm font-bold text-slate-700 font-['Montserrat',sans-serif]">Order Number (If applicable)</label>
-                  <input type="text" id="order" className="w-full bg-[#EDF2F4] border-transparent focus:border-[#D90429] focus:bg-white focus:ring-2 focus:ring-[#D90429]/20 rounded-xl px-4 py-3 outline-none transition" placeholder="#12345" />
+                  <label htmlFor="phone" className="text-sm font-bold text-slate-700 font-['Montserrat',sans-serif]">Phone Number (Optional)</label>
+                  <input type="tel" id="phone" className="w-full bg-[#EDF2F4] border-transparent focus:border-[#D90429] focus:bg-white focus:ring-2 focus:ring-[#D90429]/20 rounded-xl px-4 py-3 outline-none transition" placeholder="+234..." />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="inquiry" className="text-sm font-bold text-slate-700 font-['Montserrat',sans-serif]">Inquiry Type</label>
                   <select id="inquiry" className="w-full bg-[#EDF2F4] border-transparent focus:border-[#D90429] focus:bg-white focus:ring-2 focus:ring-[#D90429]/20 rounded-xl px-4 py-3 outline-none transition appearance-none">
                     <option>Support</option>
                     <option>General</option>
+                    <option>Order Issue</option>
                     <option>Author Submission</option>
                   </select>
                 </div>
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="order" className="text-sm font-bold text-slate-700 font-['Montserrat',sans-serif]">Order Number (If applicable)</label>
+                <input type="text" id="order" className="w-full bg-[#EDF2F4] border-transparent focus:border-[#D90429] focus:bg-white focus:ring-2 focus:ring-[#D90429]/20 rounded-xl px-4 py-3 outline-none transition" placeholder="#12345" />
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-bold text-slate-700 font-['Montserrat',sans-serif]">Message</label>

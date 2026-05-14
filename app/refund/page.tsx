@@ -3,11 +3,11 @@ export default function RefundPolicyPage() {
     <main className="min-h-screen bg-[#EDF2F4] py-20 px-6 font-['Merriweather',_serif]">
       <div className="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-100">
         <h1 className="text-3xl md:text-5xl font-bold text-[#2B2D42] mb-8 font-['Montserrat',_sans-serif]">Refund Policy</h1>
-        
+
         <div className="space-y-8 text-slate-600 leading-relaxed">
           <section>
             <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',_sans-serif]">1. Nature of Digital Products</h2>
-            <p>At Bookflow Publishing, we offer non-tangible, irrevocable digital goods (Ebooks). Because our products are digital downloads that cannot be "returned," we generally do not offer refunds once the download link has been clicked or the file has been accessed.</p>
+            <p>At Sellisafe, we offer non-tangible, irrevocable digital goods (Ebooks). Because our products are digital downloads that cannot be &ldquo;returned,&rdquo; we generally do not offer refunds once the download link has been clicked or the file has been accessed.</p>
           </section>
 
           <section>
@@ -22,7 +22,7 @@ export default function RefundPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',_sans-serif]">3. Requesting a Refund</h2>
-            <p>To request a refund under the eligible conditions, please contact our support team at support@bookflowpublishing.com with your order number and the reason for the request.</p>
+            <p>To request a refund under the eligible conditions, please contact our support team at <a href="mailto:csteam@sellisafe.com" className="text-[#D90429] hover:underline">csteam@sellisafe.com</a> with your order number and the reason for the request.</p>
           </section>
         </div>
       </div>

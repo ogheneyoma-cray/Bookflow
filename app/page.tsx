@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { 
-  BookOpen, 
-  Smartphone, 
-  PenTool, 
-  Zap, 
-  Layers, 
+import {
+  BookOpen,
+  Smartphone,
+  Zap,
+  Layers,
   CheckCircle,
   Search,
   ShoppingCart,
@@ -22,7 +21,7 @@ export default function HomePage() {
             Stories That <span className="text-[#D90429]">Flow</span>, Ideas That Spark.
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Welcome to Bookxflow Publishing. Instantly download premium ebooks across fiction, business, and personal development. Your next great read is just a click away, beautifully formatted for any device.
+            Welcome to Sellisafe. Instantly download premium ebooks across fiction, business, and personal development. Your next great read is just a click away, beautifully formatted for any device.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link href="/library" className="px-8 py-4 bg-[#D90429] text-white font-bold rounded-full hover:bg-[#B90424] transition w-full sm:w-auto text-lg flex items-center justify-center gap-2 font-['Montserrat',_sans-serif]">
@@ -38,7 +37,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif]">Welcome to the Future of Reading</h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            At Bookxflow Publishing, we believe that incredible stories and transformative ideas should be accessible instantly. We partner with visionary authors worldwide to bring you high-quality, professionally edited, and beautifully formatted ebooks. Whether you are reading on a Kindle, an iPad, or your smartphone, our digital files guarantee a seamless and immersive reading experience without the wait.
+            At Sellisafe, we believe that incredible stories and transformative ideas should be accessible instantly. We partner with visionary authors worldwide to bring you high-quality, professionally edited, and beautifully formatted ebooks. Whether you are reading on a Kindle, an iPad, or your smartphone, our digital files guarantee a seamless and immersive reading experience without the wait.
           </p>
         </div>
       </section>
@@ -78,7 +77,7 @@ export default function HomePage() {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif]">The Bookxflow Advantage</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif]">The Sellisafe Advantage</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex flex-col gap-4 p-6 rounded-2xl bg-[#EDF2F4]">
@@ -156,7 +155,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white font-['Montserrat',_sans-serif]">Ready to Turn the Digital Page?</h2>
           <p className="text-xl text-slate-200 max-w-2xl mx-auto">
-            Join our reader community today. Subscribe to our newsletter to receive 15% off your first ebook purchase and get exclusive weekly recommendations.
+            Join our reader community today and get exclusive access to our growing library of premium ebooks.
           </p>
           <div className="pt-4">
             <Link href="/library" className="inline-block px-10 py-5 bg-[#D90429] text-white font-bold rounded-full hover:bg-[#B90424] transition text-lg shadow-lg font-['Montserrat',_sans-serif]">

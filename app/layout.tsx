@@ -4,7 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CartProvider } from "@/context/CartContext";
+import Providers from "@/components/Providers";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -19,8 +19,11 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Bookflow Publishing | Premium Ebooks",
+  title: "Sellisafe | Premium Ebooks",
   description: "Instantly download premium ebooks across fiction, business, and personal development.",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
@@ -31,11 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${merriweather.variable}`}>
       <body className="bg-[#EDF2F4] text-slate-600 antialiased font-['Merriweather',_serif]" suppressHydrationWarning>
-        <CartProvider>
+        <Providers>
           <Navbar />
           {children}
           <Footer />
-        </CartProvider>
+        </Providers>
       </body>
     </html>
   );
