@@ -2,13 +2,16 @@
 
 @theme {
   --font-display: var(--font-playfair), "Playfair Display", "Georgia", serif;
-  --font-body: var(--font-dm-sans), "DM Sans", "Inter", sans-serif;
+  --font-body: var(--font-inter), "Inter", system-ui, sans-serif;
 
-  --color-brand-dark: #0F0E0C;
-  --color-brand-teal: #C9A961;
-  --color-brand-teal-light: #E8D5B7;
-  --color-brand-navy: #2B2520;
-  --color-brand-gray: #A89968;
+  --color-ck-dark:   #1C1007;
+  --color-ck-gold:   #C9A84C;
+  --color-ck-gold-light: #E8D08A;
+  --color-ck-cream:  #F9F5EE;
+  --color-ck-warm:   #EEE8DC;
+  --color-ck-muted:  #6B6147;
+  --color-ck-border: #D5C9B5;
+  --color-ck-green:  #2D5A3D;
 }
 
 html {

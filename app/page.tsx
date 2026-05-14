@@ -1,165 +1,221 @@
 import Link from "next/link";
-import {
-  BookOpen,
-  Smartphone,
-  Zap,
-  Layers,
-  CheckCircle,
-  Search,
-  ShoppingCart,
-  Download,
-  ArrowRight
-} from "lucide-react";
+import { ArrowRight, BookOpen, Package, Truck, Star, ShieldCheck } from "lucide-react";
+
+const featured = [
+  { title: "The Midnight Archive", author: "Elena Marchetti", genre: "Mystery", id: "CK-FIC-001" },
+  { title: "Building Empires from Zero", author: "Kwame Asante", genre: "Business", id: "CK-BUS-001" },
+  { title: "The Glass Kingdom", author: "Tobias Vance", genre: "Fantasy", id: "CK-SCI-002" },
+];
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#EDF2F4] font-['Merriweather',_serif]">
-      {/* Section 1: Hero */}
-      <section className="bg-[#2B2D42] text-white py-24 px-6">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight font-['Montserrat',_sans-serif]">
-            Stories That <span className="text-[#D90429]">Flow</span>, Ideas That Spark.
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Welcome to Sellisafe. Instantly download premium ebooks across fiction, business, and personal development. Your next great read is just a click away, beautifully formatted for any device.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link href="/library" className="px-8 py-4 bg-[#D90429] text-white font-bold rounded-full hover:bg-[#B90424] transition w-full sm:w-auto text-lg flex items-center justify-center gap-2 font-['Montserrat',_sans-serif]">
-              Explore the Library
-              <ArrowRight size={20} />
+    <main
+      className="min-h-screen bg-[#F9F5EE]"
+      style={{ fontFamily: "Inter, system-ui, sans-serif" }}
+    >
+      {/* Hero */}
+      <section className="bg-[#F9F5EE] border-b border-[#D5C9B5]">
+        <div className="max-w-7xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-7">
+            <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A84C] border border-[#C9A84C] px-3 py-1 rounded-sm">
+              Premium Physical Books
+            </span>
+            <h1
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#1C1007] leading-[1.1] tracking-tight"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Words that<br />
+              <em className="not-italic text-[#C9A84C]">live</em> on<br />
+              your shelf.
+            </h1>
+            <p className="text-lg text-[#6B6147] leading-relaxed max-w-md">
+              Crystalkeeper brings you a hand-selected collection of hardcovers and paperbacks — fiction, business, wellness, and more — delivered to your doorstep across Nigeria.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                href="/shop"
+                className="inline-flex items-center gap-2 bg-[#1C1007] text-[#F9F5EE] px-7 py-3.5 font-semibold text-sm hover:bg-[#2D1A0A] transition-colors"
+              >
+                Browse the Collection
+                <ArrowRight size={16} />
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 border border-[#D5C9B5] text-[#6B6147] px-7 py-3.5 font-semibold text-sm hover:border-[#1C1007] hover:text-[#1C1007] transition-colors"
+              >
+                Our Story
+              </Link>
+            </div>
+          </div>
+
+          {/* Decorative book stack visual */}
+          <div className="hidden md:flex flex-col items-center justify-center gap-0">
+            <div className="relative w-64">
+              {[
+                { h: "h-14", bg: "bg-[#1C1007]", w: "w-64", label: "The Midnight Archive" },
+                { h: "h-12", bg: "bg-[#C9A84C]", w: "w-56", label: "Building Empires" },
+                { h: "h-16", bg: "bg-[#2D5A3D]", w: "w-60", label: "The Glass Kingdom" },
+                { h: "h-11", bg: "bg-[#6B6147]", w: "w-52", label: "The Quiet Mind" },
+                { h: "h-13", bg: "bg-[#A87D30]", w: "w-58", label: "Chronicles of the Deep" },
+              ].map((book, i) => (
+                <div
+                  key={i}
+                  className={`${book.h} ${book.bg} ${book.w} mx-auto flex items-center pl-4 shadow-md`}
+                  style={{ marginBottom: "2px" }}
+                >
+                  <span className="text-white/60 text-xs font-medium truncate">{book.label}</span>
+                </div>
+              ))}
+              <div className="w-72 h-3 bg-[#D5C9B5] mx-auto -mx-4 shadow-sm" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="bg-white border-b border-[#D5C9B5]">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {[
+              { icon: BookOpen, step: "01", title: "Browse & Choose", desc: "Explore our curated catalog of handpicked titles across every genre." },
+              { icon: Package, step: "02", title: "Place Your Order", desc: "Select your format, add to cart, and check out securely." },
+              { icon: Truck, step: "03", title: "We Deliver", desc: "Your books are packed with care and shipped to your door across Nigeria." },
+            ].map(({ icon: Icon, step, title, desc }) => (
+              <div key={step} className="flex flex-col items-center gap-4 px-4">
+                <div className="w-14 h-14 rounded-full border-2 border-[#C9A84C] flex items-center justify-center">
+                  <Icon size={22} className="text-[#C9A84C]" />
+                </div>
+                <span className="text-xs font-bold tracking-widest text-[#C9A84C]">STEP {step}</span>
+                <h3 className="text-lg font-bold text-[#1C1007]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{title}</h3>
+                <p className="text-sm text-[#6B6147] leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured books */}
+      <section className="bg-[#F9F5EE] border-b border-[#D5C9B5]">
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A84C] mb-2">Hand-picked for you</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1C1007]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                Featured Titles
+              </h2>
+            </div>
+            <Link href="/shop" className="hidden md:inline-flex items-center gap-1.5 text-sm font-semibold text-[#6B6147] hover:text-[#1C1007] transition-colors">
+              View all <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {featured.map((book) => (
+              <Link href={`/shop/${book.id}`} key={book.id} className="group block bg-white border border-[#D5C9B5] hover:border-[#C9A84C] transition-colors">
+                <div className="bg-[#EEE8DC] h-52 flex flex-col items-center justify-center px-6 text-center border-b border-[#D5C9B5]">
+                  <BookOpen size={32} className="text-[#C9A84C] mb-3 opacity-60" />
+                  <p className="text-xs text-[#6B6147] uppercase tracking-wider mb-1">{book.genre}</p>
+                  <h3 className="font-bold text-[#1C1007] leading-snug" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                    {book.title}
+                  </h3>
+                </div>
+                <div className="p-4 flex items-center justify-between">
+                  <span className="text-sm text-[#6B6147]">by {book.author}</span>
+                  <span className="text-xs font-semibold text-[#C9A84C] uppercase tracking-wider group-hover:text-[#1C1007] transition-colors">
+                    View →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center md:hidden">
+            <Link href="/shop" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#6B6147] hover:text-[#1C1007] transition-colors">
+              View all books <ArrowRight size={14} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Section 2: About */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif]">Welcome to the Future of Reading</h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            At Sellisafe, we believe that incredible stories and transformative ideas should be accessible instantly. We partner with visionary authors worldwide to bring you high-quality, professionally edited, and beautifully formatted ebooks. Whether you are reading on a Kindle, an iPad, or your smartphone, our digital files guarantee a seamless and immersive reading experience without the wait.
-          </p>
-        </div>
-      </section>
-
-      {/* Section 3: Services / Our Genres */}
-      <section className="py-24 px-6 bg-[#EDF2F4]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif]">Discover Your Next Obsession</h2>
+      {/* Genres */}
+      <section className="bg-[#1C1007] border-b border-[#2D1A0A]">
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A84C] mb-2">Something for everyone</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Browse by Genre
+            </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
-              <BookOpen className="w-12 h-12 text-[#D90429] mb-6" />
-              <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',_sans-serif]">Fiction & Thrillers</h3>
-              <p className="text-slate-600">Lose yourself in gripping mysteries, sweeping romances, and epic world-building.</p>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
-              <Layers className="w-12 h-12 text-[#D90429] mb-6" />
-              <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',_sans-serif]">Business & Finance</h3>
-              <p className="text-slate-600">Accelerate your career and scale your business with insights from industry leaders.</p>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
-              <CheckCircle className="w-12 h-12 text-[#D90429] mb-6" />
-              <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',_sans-serif]">Self-Help & Wellness</h3>
-              <p className="text-slate-600">Invest in your personal growth with actionable, science-backed guides.</p>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
-              <Smartphone className="w-12 h-12 text-[#D90429] mb-6" />
-              <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',_sans-serif]">Tech & Education</h3>
-              <p className="text-slate-600">Upgrade your skills with comprehensive tutorials and crash courses.</p>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "Fiction & Mystery",
+              "Business & Career",
+              "Self-Help & Wellness",
+              "Sci-Fi & Fantasy",
+              "Romance & Historical",
+              "Technology & Education",
+              "Food & Lifestyle",
+              "Finance & Investing",
+            ].map((genre) => (
+              <Link
+                href="/shop"
+                key={genre}
+                className="border border-white/15 hover:border-[#C9A84C] px-5 py-4 text-sm font-medium text-[#D5C9B5] hover:text-[#C9A84C] transition-colors text-center"
+              >
+                {genre}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section 4: Why Choose Us */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif]">The Sellisafe Advantage</h2>
+      {/* Why Crystalkeeper */}
+      <section className="bg-white border-b border-[#D5C9B5]">
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A84C] mb-2">Why choose us</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1C1007]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              The Crystalkeeper Promise
+            </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-[#EDF2F4]">
-              <div className="shrink-0">
-                <Zap className="w-8 h-8 text-[#D90429]" />
+            {[
+              { icon: Star, title: "Curated Quality", desc: "Every title in our catalog is personally reviewed. We stock only books worth your shelf space." },
+              { icon: Truck, title: "Reliable Delivery", desc: "Fast, trackable shipping across Lagos and nationwide. Carefully packed so your books arrive in perfect condition." },
+              { icon: ShieldCheck, title: "Hassle-free Returns", desc: "Not satisfied? Return undamaged books within 14 days of delivery, no questions asked." },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="flex gap-5 p-6 bg-[#F9F5EE] border border-[#D5C9B5]">
+                <div className="shrink-0">
+                  <div className="w-10 h-10 bg-[#C9A84C]/15 flex items-center justify-center">
+                    <Icon size={20} className="text-[#C9A84C]" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[#1C1007] mb-1.5" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>{title}</h3>
+                  <p className="text-sm text-[#6B6147] leading-relaxed">{desc}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-[#2B2D42] mb-2 font-['Montserrat',_sans-serif]">Instant Gratification</h3>
-                <p className="text-slate-600">No shipping delays. Buy it, download it, and start reading in seconds.</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-[#EDF2F4]">
-              <div className="shrink-0">
-                <Layers className="w-8 h-8 text-[#D90429]" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-[#2B2D42] mb-2 font-['Montserrat',_sans-serif]">Universal Compatibility</h3>
-                <p className="text-slate-600">All our ebooks are delivered in standard formats (EPUB, PDF) ensuring a perfect fit for any e-reader or mobile device.</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-[#EDF2F4]">
-              <div className="shrink-0">
-                <CheckCircle className="w-8 h-8 text-[#D90429]" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-[#2B2D42] mb-2 font-['Montserrat',_sans-serif]">Curated Excellence</h3>
-                <p className="text-slate-600">We champion quality over quantity. Every book in our catalog has been rigorously vetted for exceptional writing and professional formatting.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section 5: Our Process */}
-      <section className="py-24 px-6 bg-[#2B2D42] text-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-['Montserrat',_sans-serif]">How It Works</h2>
-          </div>
-          <div className="grid md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-[#D90429]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#D90429]">
-                <Search size={32} />
-              </div>
-              <h3 className="text-xl font-bold font-['Montserrat',_sans-serif]">1. Explore</h3>
-              <p className="text-slate-400">Explore our curated categories and read free sample chapters.</p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-[#D90429]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#D90429]">
-                <ShoppingCart size={32} />
-              </div>
-              <h3 className="text-xl font-bold font-['Montserrat',_sans-serif]">2. Purchase</h3>
-              <p className="text-slate-400">Use our secure, lightning-fast checkout process.</p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-[#D90429]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#D90429]">
-                <Download size={32} />
-              </div>
-              <h3 className="text-xl font-bold font-['Montserrat',_sans-serif]">3. Download</h3>
-              <p className="text-slate-400">Receive your instant download link immediately on-screen and via email.</p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-[#D90429]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#D90429]">
-                <BookOpen size={32} />
-              </div>
-              <h3 className="text-xl font-bold font-['Montserrat',_sans-serif]">4. Immerse</h3>
-              <p className="text-slate-400">Open the file in your favorite reading app and let the story flow.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 6: CTA */}
-      <section className="py-24 px-6 bg-[#2B2D42]">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-['Montserrat',_sans-serif]">Ready to Turn the Digital Page?</h2>
-          <p className="text-xl text-slate-200 max-w-2xl mx-auto">
-            Join our reader community today and get exclusive access to our growing library of premium ebooks.
+      {/* CTA */}
+      <section className="bg-[#EEE8DC]">
+        <div className="max-w-4xl mx-auto px-6 py-20 text-center space-y-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1C1007]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+            Ready to build your collection?
+          </h2>
+          <p className="text-[#6B6147] text-lg max-w-xl mx-auto leading-relaxed">
+            Over a hundred titles waiting to be discovered. Order today and we&apos;ll deliver straight to your door.
           </p>
-          <div className="pt-4">
-            <Link href="/library" className="inline-block px-10 py-5 bg-[#D90429] text-white font-bold rounded-full hover:bg-[#B90424] transition text-lg shadow-lg font-['Montserrat',_sans-serif]">
-              Shop Ebooks Now
+          <div className="pt-2">
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 bg-[#C9A84C] text-[#1C1007] px-10 py-4 font-bold text-sm hover:bg-[#B8943D] transition-colors"
+            >
+              Shop Books Now
+              <ArrowRight size={16} />
             </Link>
           </div>
         </div>

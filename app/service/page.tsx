@@ -1,41 +1,59 @@
-import { BookOpen, Download, Smartphone, Layers } from "lucide-react";
+import { BookOpen, Truck, Package, Users } from "lucide-react";
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-[#EDF2F4] py-24 px-6 font-['Merriweather',serif]">
-      <div className="max-w-5xl mx-auto space-y-16">
-
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#2B2D42] font-['Montserrat',sans-serif]">Our Services</h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Sellisafe provides premium digital publishing services for both readers and authors.
+    <main
+      className="min-h-screen bg-[#F9F5EE]"
+      style={{ fontFamily: "Inter, system-ui, sans-serif" }}
+    >
+      <section className="bg-[#1C1007] px-6 py-14">
+        <div className="max-w-4xl mx-auto text-center space-y-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A84C]">What We Offer</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+            Our Services
+          </h1>
+          <p className="text-[#A89968] max-w-xl mx-auto">
+            From individual purchases to bulk corporate orders, Crystalkeeper serves every type of reader.
           </p>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-            <BookOpen className="w-12 h-12 text-[#D90429] mb-4" />
-            <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',sans-serif]">Premium Ebook Store</h3>
-            <p className="text-slate-600 leading-relaxed">Browse and purchase from a curated selection of fiction, business, self-help, and educational titles in high-quality digital formats.</p>
-          </div>
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-            <Download className="w-12 h-12 text-[#D90429] mb-4" />
-            <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',sans-serif]">Instant Download</h3>
-            <p className="text-slate-600 leading-relaxed">Receive your ebook instantly after purchase — no waiting, no shipping. Available in EPUB and PDF formats compatible with all devices.</p>
-          </div>
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-            <Smartphone className="w-12 h-12 text-[#D90429] mb-4" />
-            <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',sans-serif]">Multi-Device Access</h3>
-            <p className="text-slate-600 leading-relaxed">Your purchased ebooks work seamlessly on Kindle, Apple Books, Google Play Books, and any standard e-reader or smartphone app.</p>
-          </div>
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-            <Layers className="w-12 h-12 text-[#D90429] mb-4" />
-            <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',sans-serif]">Author Publishing</h3>
-            <p className="text-slate-600 leading-relaxed">Are you an author? Submit your manuscript to be part of the Sellisafe catalog. We handle formatting, distribution, and payments.</p>
-          </div>
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              icon: BookOpen,
+              title: "Curated Physical Bookstore",
+              desc: "Browse our hand-selected catalog of over 100 titles across fiction, business, self-help, science, and more. Every book has been personally reviewed before it earns a place in our store.",
+            },
+            {
+              icon: Truck,
+              title: "Nationwide Delivery",
+              desc: "We ship physical books to every state in Nigeria. Orders from Lagos arrive in 1–2 business days; nationwide delivery takes 3–5 business days. Free shipping on orders over $35.",
+            },
+            {
+              icon: Package,
+              title: "Gift Wrapping",
+              desc: "Sending books as a gift? We offer premium gift wrapping with a personalised message card. Select this option at checkout — perfect for birthdays, graduations, and celebrations.",
+            },
+            {
+              icon: Users,
+              title: "Bulk & Corporate Orders",
+              desc: "Ordering books for your team, school, or event? We offer discounted pricing for bulk orders of 10+ copies of the same title. Contact us at hello@crystalkeeper.com for a quote.",
+            },
+          ].map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="bg-white border border-[#D5C9B5] p-8">
+              <div className="w-12 h-12 bg-[#EEE8DC] flex items-center justify-center mb-5">
+                <Icon size={22} className="text-[#C9A84C]" />
+              </div>
+              <h3 className="text-xl font-bold text-[#1C1007] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                {title}
+              </h3>
+              <p className="text-[#6B6147] text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
         </div>
-
-      </div>
+      </section>
     </main>
   );
 }

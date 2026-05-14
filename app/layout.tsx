@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { Montserrat, Merriweather } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
 
-const montserrat = Montserrat({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-playfair",
 });
 
-const merriweather = Merriweather({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
-  variable: "--font-merriweather",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "Sellisafe | Premium Ebooks",
-  description: "Instantly download premium ebooks across fiction, business, and personal development.",
+  title: "Crystalkeeper | Premium Physical Books",
+  description: "Discover and order handpicked physical books across fiction, business, self-help, and more. Delivered to your door.",
   icons: {
     icon: "/logo.svg",
   },
@@ -32,8 +32,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${merriweather.variable}`}>
-      <body className="bg-[#EDF2F4] text-slate-600 antialiased font-['Merriweather',_serif]" suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <body
+        className="bg-[#F9F5EE] text-[#1C1007] antialiased"
+        style={{ fontFamily: "Inter, system-ui, sans-serif" }}
+        suppressHydrationWarning
+      >
         <Providers>
           <Navbar />
           {children}

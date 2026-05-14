@@ -1,48 +1,93 @@
-import { Heart, Lightbulb, Scale } from "lucide-react";
+import { BookOpen, Package, Users } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#EDF2F4] py-24 px-6 font-['Merriweather',serif]">
-      <div className="max-w-4xl mx-auto space-y-16">
-
-        {/* Story Section */}
-        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-sm border border-slate-100 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#2B2D42] mb-8 font-['Montserrat',sans-serif] leading-tight">
-            Our Story: Empowering Authors, Inspiring Readers
+    <main
+      className="min-h-screen bg-[#F9F5EE]"
+      style={{ fontFamily: "Inter, system-ui, sans-serif" }}
+    >
+      {/* Page header */}
+      <section className="bg-[#1C1007] px-6 py-16">
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A84C]">Our Story</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+            Bringing Great Books<br />to Every Doorstep
           </h1>
-          <div className="space-y-6 text-lg text-slate-600 leading-relaxed text-left">
-            <p>
-              Sellisafe was founded with a singular vision: to break down the barriers of traditional publishing and connect brilliant authors directly with avid readers. In a fast-paced world, we recognized the need for a digital-first publisher that cared as much about the reading experience—typography, formatting, and cross-device compatibility—as it did about the words themselves.
-            </p>
-            <p>
-              Today, Sellisafe is a thriving hub for diverse voices. We handle the technical intricacies of digital publishing so our authors can focus entirely on their craft. For our readers, this means a constantly expanding, premium library of thought-provoking and entertaining content. We are proud to be a 100% digital, eco-friendly company, celebrating the sustainable nature of screen-based reading while delivering uncompromised quality.
-            </p>
+          <p className="text-[#A89968] text-lg max-w-2xl mx-auto leading-relaxed">
+            Crystalkeeper was founded on the belief that everyone deserves access to great physical books — beautifully made, thoughtfully chosen, and reliably delivered.
+          </p>
+        </div>
+      </section>
+
+      {/* Story */}
+      <section className="bg-white border-b border-[#D5C9B5]">
+        <div className="max-w-4xl mx-auto px-6 py-16 space-y-8 text-[#6B6147] leading-relaxed">
+          <p className="text-lg">
+            Founded in Lagos, Crystalkeeper started as a small lending library in the Ajao Estate neighbourhood. As word spread and shelves overflowed, we realised the demand for quality books far outstripped what any local shelf could hold. In 2022, we launched our online store — making our curated catalog available to readers across Nigeria and beyond.
+          </p>
+          <p>
+            We&apos;re picky by design. Every title in our catalog earns its place after careful review. We don&apos;t stock everything; we stock the right things. Our buyers comb through new releases, rediscover overlooked classics, and seek out voices that deserve wider audiences — so you don&apos;t have to.
+          </p>
+          <p>
+            Today, Crystalkeeper ships hundreds of orders a month from our Lagos warehouse. Every book is quality-checked, carefully wrapped, and sent out with a personal touch. We&apos;re proud to be a Nigerian bookstore that holds its own against any in the world.
+          </p>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="bg-[#F9F5EE] border-b border-[#D5C9B5]">
+        <div className="max-w-5xl mx-auto px-6 py-16">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A84C] mb-2">What drives us</p>
+            <h2 className="text-3xl font-bold text-[#1C1007]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              Our Core Values
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: BookOpen,
+                title: "Curation Above All",
+                desc: "We read widely so you can choose confidently. Every book we list has been evaluated for quality, relevance, and lasting value.",
+              },
+              {
+                icon: Package,
+                title: "Delivered with Care",
+                desc: "A book is a physical object that deserves respect. We pack every order as if we were sending it to our own bookshelves.",
+              },
+              {
+                icon: Users,
+                title: "Built for Readers",
+                desc: "Our team are avid readers first and retailers second. We give honest recommendations because we genuinely love the books we carry.",
+              },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-white border border-[#D5C9B5] p-8">
+                <div className="w-12 h-12 bg-[#EEE8DC] flex items-center justify-center mb-5">
+                  <Icon size={22} className="text-[#C9A84C]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#1C1007] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                  {title}
+                </h3>
+                <p className="text-sm text-[#6B6147] leading-relaxed">{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* Core Values Section */}
-        <div className="space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2B2D42] text-center font-['Montserrat',sans-serif]">Our Core Values</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
-              <Lightbulb className="w-12 h-12 text-[#D90429] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',sans-serif]">Innovation</h3>
-              <p className="text-slate-600 leading-relaxed">We continually adapt to the latest e-reading technologies to provide the most fluid user experience.</p>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
-              <Scale className="w-12 h-12 text-[#D90429] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',sans-serif]">Fairness</h3>
-              <p className="text-slate-600 leading-relaxed">We believe in transparent partnerships and fair royalties for all our authors.</p>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
-              <Heart className="w-12 h-12 text-[#D90429] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#2B2D42] mb-3 font-['Montserrat',sans-serif]">Passion</h3>
-              <p className="text-slate-600 leading-relaxed">We are book lovers first. Our dedication to the written word drives every decision we make.</p>
-            </div>
-          </div>
+      {/* Team snippet */}
+      <section className="bg-[#EEE8DC]">
+        <div className="max-w-4xl mx-auto px-6 py-16 text-center space-y-4">
+          <h2 className="text-2xl font-bold text-[#1C1007]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+            Based in Lagos, Shipping Nationwide
+          </h2>
+          <p className="text-[#6B6147] max-w-xl mx-auto leading-relaxed">
+            Our team operates from our warehouse at 16 Anthony Udo Street, Ajao Estate, Oshodi-Isolo LGA, Lagos. Reach us at{" "}
+            <a href="mailto:hello@crystalkeeper.com" className="text-[#C9A84C] hover:underline">hello@crystalkeeper.com</a>
+            {" "}or call <a href="tel:+2349033609628" className="text-[#C9A84C] hover:underline">+234 903 360 9628</a>.
+          </p>
         </div>
-
-      </div>
+      </section>
     </main>
   );
 }

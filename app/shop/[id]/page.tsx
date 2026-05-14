@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
+import { ArrowLeft, BookOpen, BookMarked, Hash } from "lucide-react";
 import { products } from "@/lib/products";
 import AddToCart from "@/components/AddToCart";
 import PriceDisplay from "@/components/PriceDisplay";
@@ -19,61 +19,82 @@ export default async function ProductDetailsPage({
   const { id } = await params;
   const product = products.find((p) => p.id === id);
 
-  if (!product) {
-    notFound();
-  }
+  if (!product) notFound();
 
   return (
-    <main className="min-h-screen bg-[#EDF2F4] font-['Merriweather',_serif] py-24 px-6">
-      <div className="max-w-5xl mx-auto space-y-8">
-        <Link href="/shop" className="inline-flex items-center gap-2 text-slate-500 hover:text-[#D90429] transition font-['Montserrat',_sans-serif] font-medium">
-          <ArrowLeft size={20} />
-          Back to Shop
-        </Link>
+    <main
+      className="min-h-screen bg-[#F9F5EE]"
+      style={{ fontFamily: "Inter, system-ui, sans-serif" }}
+    >
+      {/* Breadcrumb */}
+      <div className="border-b border-[#D5C9B5] bg-white">
+        <div className="max-w-5xl mx-auto px-6 py-3">
+          <Link
+            href="/shop"
+            className="inline-flex items-center gap-2 text-sm text-[#6B6147] hover:text-[#1C1007] transition-colors"
+          >
+            <ArrowLeft size={14} />
+            Back to Shop
+          </Link>
+        </div>
+      </div>
 
-        <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row">
+      <div className="max-w-5xl mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-2 gap-10 bg-white border border-[#D5C9B5]">
 
-          {/* Product Cover Placeholder */}
-          <div className="md:w-2/5 bg-[#2B2D42] p-12 flex flex-col items-center justify-center text-center relative min-h-[400px]">
-            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
-            <BookOpen className="w-24 h-24 text-[#EDF2F4] mb-6 relative z-10 opacity-50" />
-            <h2 className="text-3xl font-bold text-white mb-2 relative z-10 font-['Montserrat',_sans-serif] leading-tight">{product.name}</h2>
-            <span className="text-[#D90429] font-bold text-sm relative z-10 tracking-widest uppercase font-['Montserrat',_sans-serif]">{product.category.split("&")[0].trim()}</span>
+          {/* Book cover panel */}
+          <div className="bg-[#EEE8DC] flex flex-col items-center justify-center px-10 py-16 text-center border-r border-[#D5C9B5] min-h-[400px]">
+            <BookOpen size={56} className="text-[#C9A84C] mb-6 opacity-60" />
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A84C] mb-2">{product.category}</p>
+            <h2
+              className="text-2xl font-bold text-[#1C1007] leading-snug"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              {product.name}
+            </h2>
+            <p className="text-[#6B6147] text-sm mt-2">by {product.author}</p>
           </div>
 
-          {/* Product Details */}
-          <div className="md:w-3/5 p-8 md:p-12 flex flex-col">
-            <div className="mb-2">
-              <span className="text-[#D90429] font-bold text-sm tracking-widest uppercase font-['Montserrat',_sans-serif]">{product.category}</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif] mb-4 leading-tight">
+          {/* Details panel */}
+          <div className="p-8 md:p-10 flex flex-col">
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A84C] mb-2">{product.category}</p>
+            <h1
+              className="text-3xl md:text-4xl font-bold text-[#1C1007] leading-tight mb-2"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
               {product.name}
             </h1>
+            <p className="text-[#6B6147] mb-6">by <span className="font-semibold">{product.author}</span></p>
 
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              {product.shortDesc}
-            </p>
+            <p className="text-[#6B6147] leading-relaxed mb-8">{product.shortDesc}</p>
 
-            <div className="space-y-6 flex-1 mb-8">
-              <div>
-                <h3 className="text-lg font-bold text-[#2B2D42] font-['Montserrat',_sans-serif] mb-2">About This Book</h3>
-                <p className="text-slate-600 leading-relaxed">{product.fullDesc}</p>
-              </div>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-slate-600">
-                  <CheckCircle className="text-[#D90429] w-5 h-5 shrink-0" />
-                  <span>Instant digital download (EPUB, PDF formats)</span>
-                </li>
-                <li className="flex items-center gap-3 text-slate-600">
-                  <CheckCircle className="text-[#D90429] w-5 h-5 shrink-0" />
-                  <span>Read gracefully on Kindle, Apple Books, or Mobile</span>
-                </li>
-              </ul>
+            <div className="space-y-4 mb-8">
+              <h3 className="font-bold text-[#1C1007] text-sm uppercase tracking-wider">About This Book</h3>
+              <p className="text-[#6B6147] leading-relaxed text-sm">{product.fullDesc}</p>
             </div>
 
-            <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div className="text-4xl font-bold text-[#2B2D42] font-['Montserrat',_sans-serif]">
-                <PriceDisplay usdPrice={product.price} />
+            {/* Book metadata */}
+            <div className="grid grid-cols-2 gap-3 mb-8 p-4 bg-[#F9F5EE] border border-[#D5C9B5]">
+              <div className="flex items-center gap-2 text-sm text-[#6B6147]">
+                <BookMarked size={14} className="text-[#C9A84C]" />
+                <span>{product.format}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[#6B6147]">
+                <BookOpen size={14} className="text-[#C9A84C]" />
+                <span>{product.pages} pages</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[#6B6147] col-span-2">
+                <Hash size={14} className="text-[#C9A84C]" />
+                <span>ISBN: {product.isbn}</span>
+              </div>
+            </div>
+
+            <div className="border-t border-[#D5C9B5] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <p className="text-xs text-[#A89968] mb-1">Price</p>
+                <div className="text-3xl font-bold text-[#1C1007]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                  <PriceDisplay usdPrice={product.price} />
+                </div>
               </div>
               <AddToCart product={product} />
             </div>

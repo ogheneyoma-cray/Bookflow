@@ -21,11 +21,14 @@ export default function AddToCart({ product }: { product: Product }) {
     <button
       onClick={handleAdd}
       disabled={added}
-      className={`w-full md:w-auto flex items-center justify-center gap-2 text-white font-bold py-4 px-8 rounded-full transition font-['Montserrat',_sans-serif] text-lg ${
-        added ? "bg-emerald-600 hover:bg-emerald-700" : "bg-[#D90429] hover:bg-[#B90424]"
+      style={{ fontFamily: "Inter, system-ui, sans-serif" }}
+      className={`inline-flex items-center justify-center gap-2 px-8 py-3.5 font-semibold text-sm transition-colors ${
+        added
+          ? "bg-[#2D5A3D] text-white"
+          : "bg-[#C9A84C] text-[#1C1007] hover:bg-[#B8943D]"
       }`}
     >
-      {added ? <Check size={20} /> : <ShoppingCart size={20} />}
+      {added ? <Check size={16} /> : <ShoppingCart size={16} />}
       {added ? "Added to Cart!" : `Add to Cart — ${formatPrice(product.price)}`}
     </button>
   );

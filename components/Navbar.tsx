@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { ShoppingCart, Menu, X, Mail, Phone } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,138 +21,141 @@ export default function Navbar() {
   const { currency, setCurrency } = useCurrency();
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#2B2D42]/95 backdrop-blur-md border-b border-white/10 font-['Montserrat',sans-serif]">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-        {/* LOGO */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow rounded-[18px] overflow-hidden">
-            <img src="/logo.svg" alt="Sellisafe Logo" className="w-10 h-10 object-contain" />
+    <header className="sticky top-0 z-50 w-full" style={{ fontFamily: "Inter, system-ui, sans-serif" }}>
+      {/* Top contact bar */}
+      <div className="bg-[#1C1007] text-[#D5C9B5] text-xs py-2 px-6 hidden md:block">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-6">
+            <a href="mailto:hello@crystalkeeper.com" className="flex items-center gap-1.5 hover:text-[#C9A84C] transition-colors">
+              <Mail size={12} />
+              hello@crystalkeeper.com
+            </a>
+            <a href="tel:+2349033609628" className="flex items-center gap-1.5 hover:text-[#C9A84C] transition-colors">
+              <Phone size={12} />
+              +234 903 360 9628
+            </a>
           </div>
-          <span className="text-xl font-bold tracking-tight text-white">
-            Sellisafe
-          </span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="text-slate-300 hover:text-[#D90429] transition-colors text-sm tracking-widest uppercase"
-            >
-              {l.label}
-            </Link>
-          ))}
-
-          {/* Currency Switcher */}
-          <div className="flex items-center gap-1 bg-white/10 rounded-full p-1">
+          {/* Currency switcher */}
+          <div className="flex items-center gap-1 border border-white/20 rounded px-1 py-0.5">
             <button
               onClick={() => setCurrency("USD")}
-              className={`px-3 py-1 rounded-full text-xs font-bold transition ${
-                currency === "USD"
-                  ? "bg-[#D90429] text-white"
-                  : "text-slate-300 hover:text-white"
+              className={`px-2 py-0.5 rounded text-xs font-semibold transition ${
+                currency === "USD" ? "bg-[#C9A84C] text-[#1C1007]" : "text-[#D5C9B5] hover:text-white"
               }`}
             >
               USD
             </button>
             <button
               onClick={() => setCurrency("NGN")}
-              className={`px-3 py-1 rounded-full text-xs font-bold transition ${
-                currency === "NGN"
-                  ? "bg-[#D90429] text-white"
-                  : "text-slate-300 hover:text-white"
+              className={`px-2 py-0.5 rounded text-xs font-semibold transition ${
+                currency === "NGN" ? "bg-[#C9A84C] text-[#1C1007]" : "text-[#D5C9B5] hover:text-white"
               }`}
             >
               NGN
             </button>
           </div>
-
-          {/* Cart Icon */}
-          <Link href="/cart" className="relative text-slate-300 hover:text-[#D90429] transition-colors">
-            <ShoppingCart size={22} />
-            {totalItems > 0 && (
-              <span className="absolute -top-2 -right-2 bg-[#D90429] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                {totalItems}
-              </span>
-            )}
-          </Link>
-
-          <Link
-            href="/contact"
-            className="bg-[#D90429] text-white px-6 py-2.5 text-sm font-bold tracking-widest uppercase hover:bg-[#B90424] transition-colors rounded-full"
-          >
-            Get in Touch
-          </Link>
-        </div>
-
-        {/* Mobile Toggle */}
-        <div className="md:hidden flex items-center gap-4">
-          {/* Currency Switcher (mobile) */}
-          <div className="flex items-center gap-1 bg-white/10 rounded-full p-0.5">
-            <button
-              onClick={() => setCurrency("USD")}
-              className={`px-2 py-0.5 rounded-full text-xs font-bold transition ${
-                currency === "USD" ? "bg-[#D90429] text-white" : "text-slate-300"
-              }`}
-            >
-              $
-            </button>
-            <button
-              onClick={() => setCurrency("NGN")}
-              className={`px-2 py-0.5 rounded-full text-xs font-bold transition ${
-                currency === "NGN" ? "bg-[#D90429] text-white" : "text-slate-300"
-              }`}
-            >
-              ₦
-            </button>
-          </div>
-
-          <Link href="/cart" className="relative text-slate-300 hover:text-[#D90429]">
-            <ShoppingCart size={22} />
-            {totalItems > 0 && (
-              <span className="absolute -top-2 -right-2 bg-[#D90429] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                {totalItems}
-              </span>
-            )}
-          </Link>
-          <button
-            onClick={() => setOpen(!open)}
-            className="text-slate-300 hover:text-[#D90429]"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-[#2B2D42] border-t border-white/10 overflow-hidden"
-          >
-            <div className="px-6 py-6 flex flex-col gap-5">
-              {links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="text-slate-300 hover:text-[#D90429] transition-colors uppercase tracking-widest text-sm"
-                >
-                  {l.label}
-                </Link>
-              ))}
+      {/* Main navbar */}
+      <div className="bg-[#F9F5EE] border-b border-[#D5C9B5]">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
+            <img src="/logo.svg" alt="Crystalkeeper Logo" className="w-9 h-9 object-contain" />
+            <span
+              className="text-xl font-bold text-[#1C1007] tracking-tight group-hover:text-[#C9A84C] transition-colors"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Crystalkeeper
+            </span>
+          </Link>
+
+          {/* Desktop links — centered */}
+          <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-[#6B6147] hover:text-[#1C1007] transition-colors tracking-wide"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Cart + mobile toggle */}
+          <div className="flex items-center gap-4">
+            {/* Mobile currency */}
+            <div className="flex md:hidden items-center gap-1 border border-[#D5C9B5] rounded px-1 py-0.5">
+              <button
+                onClick={() => setCurrency("USD")}
+                className={`px-1.5 py-0.5 rounded text-xs font-semibold transition ${
+                  currency === "USD" ? "bg-[#C9A84C] text-[#1C1007]" : "text-[#6B6147]"
+                }`}
+              >
+                $
+              </button>
+              <button
+                onClick={() => setCurrency("NGN")}
+                className={`px-1.5 py-0.5 rounded text-xs font-semibold transition ${
+                  currency === "NGN" ? "bg-[#C9A84C] text-[#1C1007]" : "text-[#6B6147]"
+                }`}
+              >
+                ₦
+              </button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+
+            <Link href="/cart" className="relative text-[#6B6147] hover:text-[#1C1007] transition-colors">
+              <ShoppingCart size={22} />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[#C9A84C] text-[#1C1007] text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </Link>
+
+            <button
+              className="md:hidden text-[#6B6147] hover:text-[#1C1007]"
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="md:hidden border-t border-[#D5C9B5] bg-[#F9F5EE] overflow-hidden"
+            >
+              <div className="px-6 py-5 flex flex-col gap-4">
+                {links.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="text-sm font-medium text-[#6B6147] hover:text-[#1C1007] transition-colors py-1 border-b border-[#EEE8DC] last:border-0"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+                <div className="pt-2 flex gap-4 text-xs text-[#6B6147]">
+                  <a href="mailto:hello@crystalkeeper.com" className="hover:text-[#C9A84C] transition-colors">hello@crystalkeeper.com</a>
+                  <a href="tel:+2349033609628" className="hover:text-[#C9A84C] transition-colors">+234 903 360 9628</a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </header>
   );
 }
