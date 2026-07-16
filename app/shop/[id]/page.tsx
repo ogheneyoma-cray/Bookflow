@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle } from "lucide-react";
 import { products } from "@/lib/products";
 import AddToCart from "@/components/AddToCart";
 import PriceDisplay from "@/components/PriceDisplay";
@@ -33,12 +33,18 @@ export default async function ProductDetailsPage({
 
         <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row">
 
-          {/* Product Cover Placeholder */}
-          <div className="md:w-2/5 bg-[#2B2D42] p-12 flex flex-col items-center justify-center text-center relative min-h-[400px]">
-            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
-            <BookOpen className="w-24 h-24 text-[#EDF2F4] mb-6 relative z-10 opacity-50" />
-            <h2 className="text-3xl font-bold text-white mb-2 relative z-10 font-['Montserrat',_sans-serif] leading-tight">{product.name}</h2>
-            <span className="text-[#D90429] font-bold text-sm relative z-10 tracking-widest uppercase font-['Montserrat',_sans-serif]">{product.category.split("&")[0].trim()}</span>
+          {/* Product Cover */}
+          <div className="md:w-2/5 relative min-h-[400px] overflow-hidden">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
+              <h2 className="text-3xl font-bold text-white mb-2 leading-tight font-['Montserrat',_sans-serif]">{product.name}</h2>
+              <span className="text-[#D90429] font-bold text-sm tracking-widest uppercase font-['Montserrat',_sans-serif]">{product.category.split("&")[0].trim()}</span>
+            </div>
           </div>
 
           {/* Product Details */}

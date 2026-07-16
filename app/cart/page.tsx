@@ -38,9 +38,16 @@ export default function CartPage() {
         <div className="flex flex-col gap-4">
           {cart.map((item) => (
             <div key={item.id} className="flex items-center justify-between bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
-              <div>
-                <h2 className="font-bold text-[#2B2D42] font-['Montserrat',sans-serif]">{item.name}</h2>
-                <p className="text-slate-400 text-sm font-['Montserrat',sans-serif]">{item.sku}</p>
+              <div className="flex items-center gap-4">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-14 h-14 rounded-xl object-cover shrink-0"
+                />
+                <div>
+                  <h2 className="font-bold text-[#2B2D42] font-['Montserrat',sans-serif]">{item.name}</h2>
+                  <p className="text-slate-400 text-sm font-['Montserrat',sans-serif]">{item.sku}</p>
+                </div>
               </div>
               <div className="flex items-center gap-6">
                 <span className="font-bold text-[#2B2D42] font-['Montserrat',sans-serif]">{formatPrice(item.price)}</span>

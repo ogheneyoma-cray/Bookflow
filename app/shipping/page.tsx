@@ -25,8 +25,23 @@ export default function ShippingPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',sans-serif]">4. Technical Issues</h2>
-            <p>If you do not receive your download email within 15 minutes of purchase (please check your spam/junk folder), or if you experience any issues downloading or opening your file, please contact us immediately at <a href="mailto:csteam@sellisafe.com" className="text-[#D90429] hover:underline">csteam@sellisafe.com</a>.</p>
+            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',sans-serif]">4. Re-Downloading Your Purchases</h2>
+            <p>Every purchase you make is also saved to your Library within your Sellisafe account, so you never lose access to a title you have bought. If you need to download a book again on a new device, or if you accidentally deleted your original file, simply sign in and visit the Library page to re-download it at any time, subject to the download attempt limits described above.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',sans-serif]">5. International Availability</h2>
+            <p>Because delivery is entirely digital, our ebooks are available to customers anywhere in the world with an internet connection, at the same instant regardless of location. There are no customs forms, import duties, or cross-border delivery restrictions that apply to digital goods, though you remain responsible for ensuring digital ebook purchases are permitted under the laws of your country of residence.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',sans-serif]">6. Device Compatibility</h2>
+            <p>Our EPUB and PDF files are designed to be compatible with the vast majority of e-readers, tablets, phones, and computers, including Kindle (via file conversion), Apple Books, Google Play Books, and standard PDF readers. We recommend checking that your preferred reading app supports the file format before completing your purchase if you are uncertain about compatibility.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',sans-serif]">7. Technical Issues</h2>
+            <p>If you do not receive your download email within 15 minutes of purchase (please check your spam/junk folder), or if you experience any issues downloading or opening your file, please contact us immediately at <a href="mailto:csteam@sellisafe.com" className="text-[#D90429] hover:underline">csteam@sellisafe.com</a> with your order number, and our support team will resolve the issue or provide a fresh download link as quickly as possible.</p>
           </section>
         </div>
       </div>

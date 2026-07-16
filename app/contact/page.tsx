@@ -26,8 +26,8 @@ export default function ContactPage() {
             <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
               <Phone className="w-10 h-10 text-[#D90429] mb-4" />
               <h3 className="text-lg font-bold text-[#2B2D42] mb-2 font-['Montserrat',sans-serif]">Call Us</h3>
-              <a href="tel:+2349032537565" className="text-[#D90429] hover:underline font-medium">
-                +234 903 253 7565
+              <a href="tel:+2347015773070" className="text-[#D90429] hover:underline font-medium">
+                +234 701 577 3070
               </a>
             </div>
 

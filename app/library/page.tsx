@@ -32,11 +32,15 @@ export default function LibraryPage() {
             {purchasedBooks.map((book) => (
               <div key={book.id} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col hover:shadow-md transition duration-300">
                 
-                {/* Book Cover Placeholder */}
-                <div className="bg-[#2B2D42] p-8 flex flex-col items-center justify-center text-center relative aspect-4/3">
-                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-white to-transparent"></div>
-                  <BookOpen className="w-12 h-12 text-[#EDF2F4] mb-4 relative z-10 opacity-50" />
-                  <h3 className="text-xl font-bold text-white relative z-10 font-['Montserrat',sans-serif] leading-tight">
+                {/* Book Cover */}
+                <div className="relative aspect-4/3 overflow-hidden">
+                  <img
+                    src={book.image}
+                    alt={book.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                  <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white z-10 font-['Montserrat',sans-serif] leading-tight">
                     {book.name}
                   </h3>
                 </div>

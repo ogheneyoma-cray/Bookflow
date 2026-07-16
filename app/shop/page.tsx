@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BookOpen, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { products } from "@/lib/products";
 import { useCurrency } from "@/context/CurrencyContext";
 import { useCart } from "@/context/CartContext";
@@ -29,12 +29,16 @@ export default function ShopPage() {
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 flex flex-col hover:shadow-md transition duration-300">
 
-              {/* Book Cover Placeholder */}
+              {/* Book Cover */}
               <Link href={`/shop/${product.id}`} className="block">
-                <div className="bg-[#2B2D42] p-8 flex flex-col items-center justify-center text-center relative aspect-4/3 group cursor-pointer">
-                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-white to-transparent transition-opacity group-hover:opacity-20"></div>
-                  <BookOpen className="w-12 h-12 text-[#EDF2F4] mb-4 relative z-10 opacity-50 transition-transform group-hover:scale-110" />
-                  <h3 className="text-xl font-bold text-white relative z-10 font-['Montserrat',sans-serif] leading-tight">
+                <div className="relative aspect-4/3 group cursor-pointer overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                  <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white z-10 font-['Montserrat',sans-serif] leading-tight">
                     {product.name}
                   </h3>
                 </div>
