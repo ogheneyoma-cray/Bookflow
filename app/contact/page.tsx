@@ -33,7 +33,7 @@ export default function ContactPage() {
               {
                 icon: Phone,
                 title: "Call Us",
-                content: <a href="tel:+2349033609628" className="text-[#C9A84C] hover:underline">+234 903 360 9628</a>,
+                content: <a href="tel:+2349076759030" className="text-[#C9A84C] hover:underline">+234 907 675 9030</a>,
               },
               {
                 icon: MapPin,

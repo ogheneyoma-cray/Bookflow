@@ -75,7 +75,7 @@ export default function ShippingPolicyPage() {
 
           <div>
             <h2 className="text-xl font-bold text-[#1C1007] mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>6. Delivery Issues</h2>
-            <p>If your parcel has not arrived within the estimated window, or if your tracking shows no movement for 5+ days, please contact us at <a href="mailto:hello@crystalkeeper.com" className="text-[#C9A84C] hover:underline">hello@crystalkeeper.com</a> or call <a href="tel:+2349033609628" className="text-[#C9A84C] hover:underline">+234 903 360 9628</a>. We will investigate with the courier immediately.</p>
+            <p>If your parcel has not arrived within the estimated window, or if your tracking shows no movement for 5+ days, please contact us at <a href="mailto:hello@crystalkeeper.com" className="text-[#C9A84C] hover:underline">hello@crystalkeeper.com</a> or call <a href="tel:+2349076759030" className="text-[#C9A84C] hover:underline">+234 907 675 9030</a>. We will investigate with the courier immediately.</p>
           </div>
 
           <div>
