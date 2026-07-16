@@ -31,13 +31,13 @@ export default function CheckoutPage() {
           <CheckCircle2 size={48} className="text-emerald-600 mx-auto" />
           <h1 className="text-3xl font-bold text-[#2B2D42] font-['Montserrat',sans-serif]">Order Confirmed!</h1>
           <p className="text-slate-600">
-            Thank you for your purchase. Your download links have been sent to your email, and are also available in your Library.
+            Thank you for your purchase. Your download links have been sent to your email.
           </p>
           <Link
-            href="/library"
+            href="/shop"
             className="inline-block bg-[#D90429] text-white font-bold px-8 py-3 rounded-full hover:bg-[#b00320] transition font-['Montserrat',sans-serif]"
           >
-            Go to My Library
+            Continue Shopping
           </Link>
         </div>
       </main>

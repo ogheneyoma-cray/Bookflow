@@ -24,8 +24,8 @@ export default function HomePage() {
             Welcome to Sellisafe. Instantly download premium ebooks across fiction, business, and personal development. Your next great read is just a click away, beautifully formatted for any device.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link href="/library" className="px-8 py-4 bg-[#D90429] text-white font-bold rounded-full hover:bg-[#B90424] transition w-full sm:w-auto text-lg flex items-center justify-center gap-2 font-['Montserrat',_sans-serif]">
-              Explore the Library
+            <Link href="/shop" className="px-8 py-4 bg-[#D90429] text-white font-bold rounded-full hover:bg-[#B90424] transition w-full sm:w-auto text-lg flex items-center justify-center gap-2 font-['Montserrat',_sans-serif]">
+              Explore the Shop
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -158,7 +158,7 @@ export default function HomePage() {
             Join our reader community today and get exclusive access to our growing library of premium ebooks.
           </p>
           <div className="pt-4">
-            <Link href="/library" className="inline-block px-10 py-5 bg-[#D90429] text-white font-bold rounded-full hover:bg-[#B90424] transition text-lg shadow-lg font-['Montserrat',_sans-serif]">
+            <Link href="/shop" className="inline-block px-10 py-5 bg-[#D90429] text-white font-bold rounded-full hover:bg-[#B90424] transition text-lg shadow-lg font-['Montserrat',_sans-serif]">
               Shop Ebooks Now
             </Link>
           </div>

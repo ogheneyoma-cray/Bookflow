@@ -26,7 +26,7 @@ export default function ShippingPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-bold text-[#2B2D42] mb-4 font-['Montserrat',sans-serif]">4. Re-Downloading Your Purchases</h2>
-            <p>Every purchase you make is also saved to your Library within your Sellisafe account, so you never lose access to a title you have bought. If you need to download a book again on a new device, or if you accidentally deleted your original file, simply sign in and visit the Library page to re-download it at any time, subject to the download attempt limits described above.</p>
+            <p>If you need to download a book again on a new device, or if you accidentally deleted your original file, simply use the original download link sent to your email, subject to the download attempt limits described above.</p>
           </section>
 
           <section>
