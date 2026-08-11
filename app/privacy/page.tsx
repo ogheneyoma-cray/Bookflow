@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
 
           <div>
             <h2 className="text-xl font-bold text-[#1C1007] mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>6. Contact</h2>
-            <p>For privacy queries, write to <a href="mailto:hello@crystalkeeper.com" className="text-[#C9A84C] hover:underline">hello@crystalkeeper.com</a> or call <a href="tel:+2349076759030" className="text-[#C9A84C] hover:underline">+234 907 675 9030</a>.</p>
+            <p>For privacy queries, write to <a href="mailto:hello@crystalkeeper.com" className="text-[#C9A84C] hover:underline">hello@crystalkeeper.com</a> or call <a href="tel:+2347088842059" className="text-[#C9A84C] hover:underline">+234 708 884 2059</a>.</p>
           </div>
 
         </div>

@@ -30,9 +30,9 @@ export default function Navbar() {
               <Mail size={12} />
               hello@crystalkeeper.com
             </a>
-            <a href="tel:+2349076759030" className="flex items-center gap-1.5 hover:text-[#C9A84C] transition-colors">
+            <a href="tel:+2347088842059" className="flex items-center gap-1.5 hover:text-[#C9A84C] transition-colors">
               <Phone size={12} />
-              +234 907 675 9030
+              +234 708 884 2059
             </a>
           </div>
           {/* Currency switcher */}
@@ -149,7 +149,7 @@ export default function Navbar() {
                 ))}
                 <div className="pt-2 flex gap-4 text-xs text-[#6B6147]">
                   <a href="mailto:hello@crystalkeeper.com" className="hover:text-[#C9A84C] transition-colors">hello@crystalkeeper.com</a>
-                  <a href="tel:+2349076759030" className="hover:text-[#C9A84C] transition-colors">+234 907 675 9030</a>
+                  <a href="tel:+2347088842059" className="hover:text-[#C9A84C] transition-colors">+234 708 884 2059</a>
                 </div>
               </div>
             </motion.div>

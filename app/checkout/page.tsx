@@ -111,7 +111,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="sm:col-span-2">
                   <label className="block text-xs font-semibold text-[#6B6147] mb-1.5">Phone</label>
-                  <input required type="tel" placeholder="+234 907 675 9030" className="w-full border border-[#D5C9B5] px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#C9A84C]" />
+                  <input required type="tel" placeholder="+234 708 884 2059" className="w-full border border-[#D5C9B5] px-3.5 py-2.5 text-sm focus:outline-none focus:border-[#C9A84C]" />
                 </div>
                 <div className="sm:col-span-2">
                   <label className="block text-xs font-semibold text-[#6B6147] mb-1.5">Street Address</label>

@@ -84,7 +84,7 @@ export default function AboutPage() {
           <p className="text-[#6B6147] max-w-xl mx-auto leading-relaxed">
             Our team operates from our warehouse at 16 Anthony Udo Street, Ajao Estate, Oshodi-Isolo LGA, Lagos. Reach us at{" "}
             <a href="mailto:hello@crystalkeeper.com" className="text-[#C9A84C] hover:underline">hello@crystalkeeper.com</a>
-            {" "}or call <a href="tel:+2349076759030" className="text-[#C9A84C] hover:underline">+234 907 675 9030</a>.
+            {" "}or call <a href="tel:+2347088842059" className="text-[#C9A84C] hover:underline">+234 708 884 2059</a>.
           </p>
         </div>
       </section>
